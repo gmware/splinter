@@ -38,6 +38,8 @@ class WebDriver(BaseWebDriver):
         firefox_profile = FirefoxProfile(profile)
         firefox_profile.set_preference("extensions.logging.enabled", False)
         firefox_profile.set_preference("network.dns.disableIPv6", False)
+        firefox_profile.accept_untrusted_certs = True
+        firefox_profile.assume_untrusted_cert_issuer = True
 
         firefox_capabilities = DesiredCapabilities().FIREFOX
         firefox_capabilities["marionette"] = True
