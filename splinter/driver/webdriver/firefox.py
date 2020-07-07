@@ -67,6 +67,8 @@ class WebDriver(BaseWebDriver):
         if incognito:
             firefox_options.add_argument("-private")
 
+        firefox_profile.update_preferences()
+
         self.driver = Firefox(
             firefox_profile,
             capabilities=firefox_capabilities,
